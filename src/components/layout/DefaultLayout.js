@@ -1,7 +1,8 @@
 import React from "react";
 import { styled, css } from "styled-components";
 import Header from "./Header";
-
+import Footer from "./Footer";
+import Container from "../common/Container";
 
 const PageHeader = styled.div`
   ${props => props.fixed && css`position: fixed;`}
@@ -13,8 +14,8 @@ const DefaultLayout = ({ fixedHeader, children }) => {
       <PageHeader fixed={fixedHeader}>
         <Header />
       </PageHeader>
-      {children}
-      <footer>This footer</footer>
+      <Container>{children}</Container>
+      <Footer></Footer>
     </div>
   )
 }
