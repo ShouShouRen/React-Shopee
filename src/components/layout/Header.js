@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "../common/Container";
 import { styled } from "styled-components";
 
 const StyledHeader = styled.header`
@@ -7,8 +8,14 @@ const StyledHeader = styled.header`
   height: 200px;
 `;
 
+
+
 const Header = () => {
-  return <StyledHeader>This is a fixed header</StyledHeader>;
+  return (
+    <StyledHeader>
+      <Container>Header</Container>
+    </StyledHeader>
+  );
 }
 
 export default Header;
