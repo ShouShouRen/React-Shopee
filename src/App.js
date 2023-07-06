@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import HomePage from './pages/HomePage';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import ProductCollectionPage from './pages/ProductCollectionPage';
+import ProductPage from './pages/ProductPage';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+  useRouteMatch,
+} from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/*' element={<Navigate to="/mall" />} />
+        <Route path='/mall' element={<HomePage />} exact />
+        <Route path='/cart' element={<CartPage />} exact />
+        <Route path='/checkout' element={<CheckoutPage exact />} />
+        <Route path='/mall/:categoryName' element={<ProductCollectionPage />} />
+        <Route path='/:productName' element={<ProductPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
