@@ -93,7 +93,7 @@ const Footer = () => {
           <FooterColumn>
             <FooterColumnTitle>下載蝦皮</FooterColumnTitle>
             <Box>
-              <img src={QRCode} alt="qrcode" width="50%"></img>
+              <img src={QRCode} alt="qrcode" width="60%"></img>
               <ImgBox>
                 <img src={AppleStore} alt="applestore"></img>
                 <img src={GooglePlay} alt="googleplay"></img>
