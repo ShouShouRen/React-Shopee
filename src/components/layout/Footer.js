@@ -16,7 +16,10 @@ const StyledFooter = styled.footer`
 
 const Box = styled.div`
   display: flex;
-  // flex-wrap: wrap;
+`;
+const Boxs = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const FooterColumnTitle = styled.h4`
@@ -55,7 +58,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <Container>
-        <Box>
+        <Boxs>
           <FooterColumn>
             <FooterColumnTitle>客服中心</FooterColumnTitle>
             <Link to="/">幫助中心</Link>
@@ -101,7 +104,7 @@ const Footer = () => {
               </ImgBox>
             </Box>
           </FooterColumn>
-        </Box>
+        </Boxs>
       </Container>
     </StyledFooter>
   )
