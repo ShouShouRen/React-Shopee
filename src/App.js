@@ -8,9 +8,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
   Navigate,
-  useRouteMatch,
 } from "react-router-dom";
 
 const App = () => {
