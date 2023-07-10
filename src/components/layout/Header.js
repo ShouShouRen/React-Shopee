@@ -28,9 +28,11 @@ const Navigator = styled.div`
 `;
 
 const Toolbar = styled.div`
+  display: flex;
+  color: white;
+  cursor: pointer;
   a {
     margin-inline: 6px;
-    color: white;
     text-decoration: none;
   }
 `;
@@ -60,7 +62,7 @@ const Header = () => {
                 <a href="#!">Peter</a>
                 <span onClick={() => logout()}>登出</span>
               </div>
-            ) : (<a href="#!">登入/註冊</a>)}
+            ) : (<Link to="/login">登入/註冊</Link>)}
           </Toolbar>
         </StyledHeaderSection>
         <StyledHeaderSection>
