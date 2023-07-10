@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Clearfix from "../components/common/ClearFix";
 import DefaultLayout from "../components/layout/DefaultLayout";
 import { styled } from "styled-components";
@@ -9,6 +9,7 @@ import Banner3 from "../images/banner/banner3.jpg"
 import { Link } from "react-router-dom";
 import ProductCard from "../components/product/ProductCards";
 import "../css/style.css";
+import AuthContext from "../components/auth/AuthContext";
 
 const BannerBox = styled.div`
   display: flex;
@@ -86,9 +87,11 @@ const BannerFeatureColumn = styled.div`
 `;
 
 const HomePage = () => {
+  const { isAuthenticated } = useContext(AuthContext);
   return (
     <DefaultLayout fixedHeader>
       <Clearfix></Clearfix>
+      {isAuthenticated && <h1>welcome back</h1>}
       <BannerBox>
         <BannerCarouselContainer>
           <Carousel autoplay>
