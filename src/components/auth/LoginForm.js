@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button, Input } from "antd";
+import { Button, Input, message } from "antd";
 import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
 import "../../css/style.css";
 import AuthContext from "./AuthContext";
@@ -12,7 +12,11 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const HandleLogin = () => {
     console.log('get');
-    login(username, password);
+    login(username, password).then(({ token, error }) => {
+      if (!token) {
+        message.error(error);
+      }
+    });
   };
   useEffect(() => {
     isAuthenticated && navigate("/");

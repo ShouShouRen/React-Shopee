@@ -41,7 +41,7 @@ const Box = styled.div`
 `;
 
 const Header = () => {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, logout } = useContext(AuthContext);
   return (
     <StyledHeader>
       <Container>
@@ -55,7 +55,11 @@ const Header = () => {
           <Toolbar>
             <a href="#!">通知</a>
             <a href="#!">幫助中心</a>
-            {isAuthenticated ? (<a href="#!">Peter</a>
+            {isAuthenticated ? (
+              <div>
+                <a href="#!">Peter</a>
+                <span onClick={() => logout()}>登出</span>
+              </div>
             ) : (<a href="#!">登入/註冊</a>)}
           </Toolbar>
         </StyledHeaderSection>
